@@ -2,10 +2,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static PyObject* Sys_Print()
+static PyObject* Sys_Print(PyObject* self, PyObject* const* args, Py_ssize_t len)
 {
-    printf("SP_SysCallBack\n");
-    return PyLong_FromLong(1);
+    if (len != 2)
+    {
+        return Py_False;
+    }
+    long arg0 = PyLong_AsLong(args[0]);
+    long arg1 = PyLong_AsLong(args[1]);
+
+    printf("SP_SysCallBack : %d\n", arg0 + arg1);
+    return Py_True;
 }
 
 static PyMethodDef methodDef[2];
@@ -22,7 +29,7 @@ int main()
     methodDef[0].ml_doc = NULL;
     methodDef[0].ml_name = "sys_print";
     methodDef[0].ml_meth = (PyCFunction)&Sys_Print;
-    methodDef[0].ml_flags = METH_NOARGS;
+    methodDef[0].ml_flags = METH_FASTCALL;
 
     methodDef[1].ml_doc = NULL;
     methodDef[1].ml_name = NULL;
