@@ -29,3 +29,12 @@
 *.exe
 *.out
 *.app
+
+#
+*.ipch
+*.suo
+*.db
+*.vs
+*.pdb
+*.tlog
+*.lastbuildstate
