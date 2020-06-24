@@ -60,10 +60,23 @@ int main()
     if (pFunc && PyCallable_Check(pFunc))
     {
         pValue = PyObject_CallObject(pFunc, NULL);
-        Py_DECREF(pValue);
-        Py_DECREF(pFunc);
     }
 
+    PyObject* pFuncPyPrint = PyObject_GetAttrString(pModule, "data_print");
+    pFunc = PyObject_GetAttrString(pModule, "on_pre_process");
+    pValue = PyObject_CallObject(pFunc, NULL);
+    if (pValue)
+    {
+        int len = PyList_GET_SIZE(pValue);
+        for (int i = 0; i < len; i++)
+        {
+            PyObject_CallFunction(pFuncPyPrint, "O", PyList_GetItem(pValue, i));
+        }
+    }
+
+
+    Py_XDECREF(pValue);
+    Py_XDECREF(pFunc);
     Py_XDECREF(pModule);
     Py_Finalize();
 
