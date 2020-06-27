@@ -1,4 +1,8 @@
-import sp_sys
+# import sp_sys
+from SPScript.SPModule import *
+
+class Object:
+    c = 1
 
 class Data:
     def init_data(self, code):
@@ -14,7 +18,13 @@ def on_pre_process():
 
 def kernel():
     sp_sys.sys_print(0, 4)
+    o1 = Object()
+    o1.code = 12
+    sp_sys.sys_check(o1)
     print("hello python")
+
+    moduleObj = SPModule()
+    moduleObj.ToString()
     return
 
 def data_print(t):

@@ -13,10 +13,33 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="SPCoreImport">
+      <UniqueIdentifier>{b34841ed-5b47-4994-93bd-f582a6eeeac6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\framework\SPCore\Module\SPModule.cpp">
+      <Filter>SPCoreImport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\SPCore\Module\SPModuleManager.cpp">
+      <Filter>SPCoreImport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\SPCore\SPCoreEngine.cpp">
+      <Filter>SPCoreImport</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp">
+      <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\SPCore\Module\SPModuleManager.hpp">
+      <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\SPCore\SPCoreEngine.hpp">
+      <Filter>SPCoreImport</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

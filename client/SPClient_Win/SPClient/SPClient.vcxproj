@@ -78,8 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>3rd/python/include;$(IncludePath)</IncludePath>
-    <LibraryPath>3rd/python/lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../framework/SPCore;../../framework/Dependent/python/include;$(IncludePath)</IncludePath>
+    <LibraryPath>../../framework/Dependent/python/lib;$(LibraryPath)</LibraryPath>
+    <LibraryWPath>../../framework/Dependent/python/dll;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -154,7 +155,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\framework\SPCore\Module\SPModule.cpp" />
+    <ClCompile Include="..\..\framework\SPCore\Module\SPModuleManager.cpp" />
+    <ClCompile Include="..\..\framework\SPCore\SPCoreEngine.cpp" />
     <ClCompile Include="SPClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp" />
+    <ClInclude Include="..\..\framework\SPCore\Module\SPModuleManager.hpp" />
+    <ClInclude Include="..\..\framework\SPCore\SPCoreEngine.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
