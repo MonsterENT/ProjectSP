@@ -9,8 +9,8 @@ public:
     TestModule() : SPModule(false)
     {
         InitModuleWithName("TestModule");
-        //RegisterMethod("Func0", &Func0);
-        //RegisterMethod("Func1", &Func1);
+        RegisterMethod("Func0", &Func0);
+        RegisterMethod("Func1", &Func1);
         RegisterMethod("", 0);
     }
 

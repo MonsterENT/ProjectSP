@@ -24,17 +24,16 @@ PyObject* SPModule::_BuildModule()
 {
     if (_moduleType == SPModuleType::SPModuleType_FromBuild)
     {
-        PyModuleDef desc;
-        desc.m_base = PyModuleDef_HEAD_INIT;
-        desc.m_name = Name.c_str();
-        desc.m_doc = NULL;
-        desc.m_size = -1;
-        desc.m_methods = &_methodDef[0];
-        desc.m_slots = NULL;
-        desc.m_traverse = NULL;
-        desc.m_clear = NULL;
-        desc.m_free = NULL;
-        _moduleObj = PyModule_Create(&desc);
+        _moduleDef.m_base = PyModuleDef_HEAD_INIT;
+        _moduleDef.m_name = Name.c_str();
+        _moduleDef.m_doc = NULL;
+        _moduleDef.m_size = -1;
+        _moduleDef.m_methods = &_methodDef[0];
+        _moduleDef.m_slots = NULL;
+        _moduleDef.m_traverse = NULL;
+        _moduleDef.m_clear = NULL;
+        _moduleDef.m_free = NULL;
+        _moduleObj = PyModule_Create(&_moduleDef);
     }
     else if (_moduleType == SPModuleType::SPModuleType_FromFile)
     {
@@ -55,7 +54,7 @@ SPModule::~SPModule()
     for (int i = 0; i < _attachedModules.size(); i++)
     {
         PyObject_DelAttrString(_moduleObj, _attachedModules[i]->Name.c_str());
-        //delete _attachedModules[i];
+        delete _attachedModules[i];
     }
 
     std::map<std::string, PyObject*>::iterator it = _cachedFunc.begin();

@@ -1,5 +1,4 @@
-# import sp_sys
-# from SPScript.SPModule import *
+from SPScript.SPModule import *
 
 class Object:
     c = 1
@@ -17,10 +16,10 @@ class Object:
 #     return packed_data
 
 def kernel():
-    # o1 = Object()
-    # o1.code = 12
-    # TestModule.Func0(0, 4)
-    # TestModule.Func1(o1)
-    # moduleObj = SPModule()
-    # moduleObj.ToString()
+    o1 = Object()
+    o1.code = 12
+    TestModule.Func0(0, 4)
+    TestModule.Func1(o1)
+    moduleObj = SPModule()
+    moduleObj.ToString()
     return

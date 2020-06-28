@@ -48,6 +48,7 @@ namespace SPCore_Module
         SPModuleType _moduleType;
         PyObject* _moduleObj;
 
+        PyModuleDef _moduleDef;
         std::vector<PyMethodDef> _methodDef;
 
         std::vector<SPModule*> _attachedModules;

@@ -20,10 +20,9 @@ int main()
 
     SPCoreEngine* engine = SPCoreEngine::SharedInstance();
 
-    //PyObject* ret = NULL;
-    //ret = mainModule->Invoke("kernel");
-    //Py_CLEAR(ret);
-    
+    PyObject* ret = NULL;
+    ret = mainModule->Invoke("kernel");
+    Py_CLEAR(ret);
 
     delete mainModule;
     delete engine;

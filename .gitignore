@@ -37,3 +37,4 @@
 *.pdb
 *.tlog
 *.lastbuildstate
+*.pyc
