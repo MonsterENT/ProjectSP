@@ -155,12 +155,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\framework\SPCore\Module\Build\Test\TestModule.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\SPModule.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\SPModuleManager.cpp" />
     <ClCompile Include="..\..\framework\SPCore\SPCoreEngine.cpp" />
     <ClCompile Include="SPClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\framework\SPCore\Module\Build\Test\TestModule.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\SPModuleManager.hpp" />
     <ClInclude Include="..\..\framework\SPCore\SPCoreEngine.hpp" />

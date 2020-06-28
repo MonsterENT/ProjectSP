@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\framework\SPCore\SPCoreEngine.cpp">
       <Filter>SPCoreImport</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\framework\SPCore\Module\Build\Test\TestModule.cpp">
+      <Filter>SPCoreImport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp">
@@ -39,6 +42,9 @@
       <Filter>SPCoreImport</Filter>
     </ClInclude>
     <ClInclude Include="..\..\framework\SPCore\SPCoreEngine.hpp">
+      <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\SPCore\Module\Build\Test\TestModule.hpp">
       <Filter>SPCoreImport</Filter>
     </ClInclude>
   </ItemGroup>

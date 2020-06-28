@@ -1,6 +1,7 @@
 #include "SPCoreEngine.hpp"
 #include <Python.h>
-
+#include "Module/SPModuleManager.hpp"
+using namespace SPCore_Module;
 using namespace SPCore;
 
 static SPCoreEngine* g_instancing = 0;
@@ -16,10 +17,9 @@ SPCoreEngine* SPCoreEngine::SharedInstance()
 
 SPCoreEngine::SPCoreEngine()
 {
-    //Init Module
     Py_Initialize();
+    SPModuleManager::SharedInstance()->Build(); 
 }
-
 
 SPCoreEngine::~SPCoreEngine()
 {

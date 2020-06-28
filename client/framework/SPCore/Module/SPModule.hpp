@@ -4,8 +4,9 @@
 #include <string>
 #include <Python.h>
 #include <vector>
+#include <map>
 
-namespace SPCore
+namespace SPCore_Module
 {
     enum class SPModuleType
     {
@@ -13,21 +14,21 @@ namespace SPCore
         SPModuleType_FromBuild = 1,
     };
 
+    class SPModuleManager;
+
     class SPModule
     {
+        friend SPModuleManager;
     public:
         std::string Name;
 
-        SPModule()
-        {
-        }
+        SPModule(bool isMainModule = false);
 
         void InitModuleWithFile(std::string fileName);
 
         void InitModuleWithName(std::string name);
 
-        
-        virtual void BuildModule();
+        void AttachTo(SPModule* m);
 
         SPModuleType GetModuleType()
         {
@@ -36,12 +37,22 @@ namespace SPCore
 
         virtual ~SPModule();
 
+        PyObject* Invoke(std::string name, char* format = 0, PyObject* args = 0);
+
+    protected:
+        void RegisterMethod(const char* name, _PyCFunctionFast imp);
+        PyObject* _BuildModule();
+
+        bool isMainModule;
     private:
         SPModuleType _moduleType;
         PyObject* _moduleObj;
 
         std::vector<PyMethodDef> _methodDef;
-        PyModuleDef _moduleDef;
+
+        std::vector<SPModule*> _attachedModules;
+
+        std::map<std::string, PyObject*> _cachedFunc;
     };
 }
 
