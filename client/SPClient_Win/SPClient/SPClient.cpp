@@ -6,11 +6,36 @@
 #include <Module/Build/Test/TestModule.hpp>
 #include <Module/SPModuleManager.hpp>
 
+#include <ImageSys.hpp>
+
+using namespace ImageSys;
 using namespace SPCore;
 using namespace SPCore_Module;
 
-int main()
-{ 
+int main(int argc, char** argv)
+{
+#pragma region argv
+    if (argc > 1)
+    {
+        char* settings = argv[1];
+
+        if (strlen(settings) == 2)
+        {
+            if (settings[0] == '1')
+            {
+                printf("As Server\n");
+            }
+            else
+            {
+                printf("As Client\n");
+            }
+
+            printf("Distribution To : %d\n", settings[1] - '0');
+        }
+
+    }
+#pragma endregion
+
     SPModule* mainModule = new SPModule(true);
     mainModule->InitModuleWithFile("main");
     SPModuleManager::SharedInstance()->RegisterModule(mainModule);
@@ -26,5 +51,18 @@ int main()
 
     delete mainModule;
     delete engine;
+
+    int width = 0, height = 0, comp = 0;
+    unsigned char* imageData = LoadImageFromFile("ground512.png", &width, &height, &comp);
+
+    if (imageData)
+    {
+    }
+    else
+    {
+        printf("File Not Found\n");
+    }
+
+    FreeData(imageData);
     system("pause");
 }

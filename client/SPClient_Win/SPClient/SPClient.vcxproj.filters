@@ -16,6 +16,9 @@
     <Filter Include="SPCoreImport">
       <UniqueIdentifier>{b34841ed-5b47-4994-93bd-f582a6eeeac6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ImageLoader">
+      <UniqueIdentifier>{8b3fff1a-b1aa-429b-b685-706006be95a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPClient.cpp">
@@ -33,6 +36,12 @@
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Test\TestModule.cpp">
       <Filter>SPCoreImport</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\framework\Dependent\ImageSys\ImageSys.cpp">
+      <Filter>ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.cpp">
+      <Filter>SPCoreImport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp">
@@ -45,6 +54,15 @@
       <Filter>SPCoreImport</Filter>
     </ClInclude>
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Test\TestModule.hpp">
+      <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Dependent\ImageSys\ImageSys.hpp">
+      <Filter>ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Dependent\stb\stb_image.h">
+      <Filter>ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.hpp">
       <Filter>SPCoreImport</Filter>
     </ClInclude>
   </ItemGroup>
