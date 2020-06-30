@@ -21,17 +21,21 @@ PyObject* SPImageModule::LoadImage(PyObject* self, PyObject* const* args, Py_ssi
         PyObject* rawObj = args[0];
         if (isValid(rawObj))
         {
-            char* fileName = PyBytes_AsString(args[1]);
+            //to check args[1]
+            char* fileName = PyBytes_AsString(PyUnicode_AsUTF8String(args[1]));
             int width = 0, height = 0, comp = 0;
             unsigned char* data = ImageSys::LoadImageFromFile(fileName, &width, &height, &comp);
-            //Resovle Data And Set To PyObject
+            if (data)
+            {
+                //Resovle Data And Set To PyObject
 
-            //
-            PyObject_SetAttrString(rawObj, id_width, PyLong_FromLong(width));
-            PyObject_SetAttrString(rawObj, id_height, PyLong_FromLong(height));
-            PyObject_SetAttrString(rawObj, id_comp, PyLong_FromLong(comp));
+                //
+                PyObject_SetAttrString(rawObj, id_width, PyLong_FromLong(width));
+                PyObject_SetAttrString(rawObj, id_height, PyLong_FromLong(height));
+                PyObject_SetAttrString(rawObj, id_comp, PyLong_FromLong(comp));
 
-            ImageSys::FreeData(data);
+                ImageSys::FreeData(data);
+            }
             return Py_True;
         }
     }

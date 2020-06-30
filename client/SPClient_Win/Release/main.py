@@ -1,4 +1,5 @@
-from SPScript.SPModule import *
+from SPScript.Module.SPModule import *
+import SPImageModule
 
 class Object:
     c = 1
@@ -16,6 +17,10 @@ class Object:
 #     return packed_data
 
 def kernel():
+    imageObj = SPImageModule.SPImageModule()
+    print(imageObj)
+    imageObj.LoadImage("ground512.png")
+
     o1 = Object()
     o1.code = 12
     TestModule.Func0(0, 4)

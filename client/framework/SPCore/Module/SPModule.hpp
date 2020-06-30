@@ -30,6 +30,11 @@ namespace SPCore_Module
 
         void AttachTo(SPModule* m);
 
+        void AttachTo(PyObject* raw)
+        {
+            PyObject_SetAttrString(raw, Name.c_str(), _BuildModule());
+        }
+
         SPModuleType GetModuleType()
         {
             return _moduleType;

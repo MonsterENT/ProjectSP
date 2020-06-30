@@ -1,3 +1,7 @@
 ﻿  SPImageModule.cpp
+  SPModuleManager.cpp
+F:\Project\ProjectSP\client\framework\SPCore\Module\SPModuleManager.cpp(29,23): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+F:\Project\ProjectSP\client\framework\SPCore\Module\SPModuleManager.cpp(34,31): warning C4018: “<”: 有符号/无符号不匹配
   LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能
   SPClient.vcxproj -> F:\Project\ProjectSP\client\SPClient_Win\Release\SPClient.exe

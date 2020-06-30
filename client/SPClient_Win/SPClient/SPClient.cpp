@@ -5,7 +5,7 @@
 #include <Module/SPModule.hpp>
 #include <Module/Build/Test/TestModule.hpp>
 #include <Module/SPModuleManager.hpp>
-
+#include <Module/Build/Image/SPImageModule.hpp>
 #include <ImageSys.hpp>
 
 using namespace ImageSys;
@@ -36,12 +36,22 @@ int main(int argc, char** argv)
     }
 #pragma endregion
 
+
+    SPModule* imageRawModule = new SPModule(false);
+    imageRawModule->InitModuleWithFile("SPImageModule");
+    SPModuleManager::SharedInstance()->RegisterModule(imageRawModule);
+
+    SPImageModule* imageModule = new SPImageModule();
+    imageModule->AttachTo(imageRawModule);
+
     SPModule* mainModule = new SPModule(true);
     mainModule->InitModuleWithFile("main");
     SPModuleManager::SharedInstance()->RegisterModule(mainModule);
-
+    
     TestModule* testModule = new TestModule();
     testModule->AttachTo(mainModule);
+
+
 
     SPCoreEngine* engine = SPCoreEngine::SharedInstance();
 
@@ -51,18 +61,5 @@ int main(int argc, char** argv)
 
     delete mainModule;
     delete engine;
-
-    int width = 0, height = 0, comp = 0;
-    unsigned char* imageData = LoadImageFromFile("ground512.png", &width, &height, &comp);
-
-    if (imageData)
-    {
-    }
-    else
-    {
-        printf("File Not Found\n");
-    }
-
-    FreeData(imageData);
     system("pause");
 }
