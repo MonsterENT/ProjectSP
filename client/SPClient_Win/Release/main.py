@@ -1,5 +1,5 @@
 from SPScript.Module.SPModule import *
-import SPImageModule
+from SPScript.Module.ImageSys.SPImageModule import *
 
 class Object:
     c = 1
@@ -17,7 +17,7 @@ class Object:
 #     return packed_data
 
 def kernel():
-    imageObj = SPImageModule.SPImageModule()
+    imageObj = SPImageModule()
     print(imageObj)
     imageObj.LoadImage("ground512.png")
 

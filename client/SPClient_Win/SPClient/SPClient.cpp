@@ -36,9 +36,8 @@ int main(int argc, char** argv)
     }
 #pragma endregion
 
-
     SPModule* imageRawModule = new SPModule(false);
-    imageRawModule->InitModuleWithFile("SPImageModule");
+    imageRawModule->InitModuleWithFile("SPScript.Module.ImageSys.SPImageModule");
     SPModuleManager::SharedInstance()->RegisterModule(imageRawModule);
 
     SPImageModule* imageModule = new SPImageModule();

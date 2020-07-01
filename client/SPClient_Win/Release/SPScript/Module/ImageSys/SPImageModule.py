@@ -4,8 +4,8 @@ class SPImageModule:
         comp = 0
 
         def LoadImage(self, fileName):
-            if(_SPImageModule.LoadImage(self, fileName)):
-                prinf("Success width ", width, " height ", height, " comp ", comp)
+            if(_SPImageModule._LoadImage(self, fileName)):
+                print("Success width ", self.width, " height ", self.height, " comp ", self.comp)
             else:
-                prinf("Fail")
+                print("Fail")
             return
