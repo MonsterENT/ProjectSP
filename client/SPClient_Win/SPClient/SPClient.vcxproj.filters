@@ -19,6 +19,9 @@
     <Filter Include="ImageLoader">
       <UniqueIdentifier>{8b3fff1a-b1aa-429b-b685-706006be95a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NetworkImport">
+      <UniqueIdentifier>{f413fef5-3add-49e5-b8d1-f776030dda5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SPClient.cpp">
@@ -42,6 +45,12 @@
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.cpp">
       <Filter>SPCoreImport</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\framework\Network\SPNetworkCore.cpp">
+      <Filter>NetworkImport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\framework\Network\SPNetworkSender.cpp">
+      <Filter>NetworkImport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp">
@@ -64,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.hpp">
       <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Network\SPNetworkCore.hpp">
+      <Filter>NetworkImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Network\SPNetworkSender.hpp">
+      <Filter>NetworkImport</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

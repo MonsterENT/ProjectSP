@@ -8,12 +8,17 @@
 #include <Module/Build/Image/SPImageModule.hpp>
 #include <ImageSys.hpp>
 
+#include <SPNetworkCore.hpp>
+
 using namespace ImageSys;
 using namespace SPCore;
 using namespace SPCore_Module;
+using namespace SPNetwork;
 
 int main(int argc, char** argv)
 {
+    SPNetworkCore* netcore = new SPNetworkCore();
+
 #pragma region argv
     if (argc > 1)
     {
