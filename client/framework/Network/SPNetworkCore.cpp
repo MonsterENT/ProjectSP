@@ -23,7 +23,7 @@ SPNetworkCore::SPNetworkCore()
     }
 }
 
-int SPNetworkCore::_SenderSend(SPNetworkSender* sender, char* data, unsigned int size)
+int SPNetworkCore::_SenderSend(SPNetworkSender* sender, const char* data, unsigned int size)
 {
     int errorCode = -1;
     sockaddr_in to_addr;

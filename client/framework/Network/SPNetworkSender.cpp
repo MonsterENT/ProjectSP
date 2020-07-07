@@ -3,7 +3,7 @@
 #include <string>
 using namespace SPNetwork;
 
-SPNetworkSender::SPNetworkSender(char* addr, unsigned short port, SPNetworkCore* core)
+SPNetworkSender::SPNetworkSender(const char* addr, unsigned short port, SPNetworkCore* core)
 {
     int size = sizeof(char) * (strlen(addr) + 1);
     _Addr = new char[size];
@@ -12,7 +12,7 @@ SPNetworkSender::SPNetworkSender(char* addr, unsigned short port, SPNetworkCore*
     _RefCore = core;
 }
 
-int SPNetworkSender::SendData(char* data, unsigned int size)
+int SPNetworkSender::SendData(const char* data, unsigned int size)
 {
     return _RefCore->_SenderSend(this, data, size);
 }

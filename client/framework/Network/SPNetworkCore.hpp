@@ -17,7 +17,7 @@ namespace SPNetwork
         ~SPNetworkCore();
 
     protected:
-        int _SenderSend(SPNetworkSender*, char* data, unsigned int size);
+        int _SenderSend(SPNetworkSender*, const char* data, unsigned int size);
     private:
         SOCKET _socket;
         addrinfo* _addrInfo;

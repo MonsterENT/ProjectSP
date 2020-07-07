@@ -9,7 +9,7 @@
 #include <ImageSys.hpp>
 
 #include <SPNetworkCore.hpp>
-
+#include <SPNetworkSender.hpp>
 using namespace ImageSys;
 using namespace SPCore;
 using namespace SPCore_Module;
@@ -18,6 +18,9 @@ using namespace SPNetwork;
 int main(int argc, char** argv)
 {
     SPNetworkCore* netcore = new SPNetworkCore();
+    SPNetworkSender* sender = new SPNetworkSender("127.0.0.1", 27015, netcore);
+    const char* tData = "SPNetworkSender";
+    sender->SendData(tData, strlen(tData) + 1);
 
 #pragma region argv
     if (argc > 1)
@@ -55,8 +58,6 @@ int main(int argc, char** argv)
     TestModule* testModule = new TestModule();
     testModule->AttachTo(mainModule);
 
-
-
     SPCoreEngine* engine = SPCoreEngine::SharedInstance();
 
     PyObject* ret = NULL;
@@ -65,5 +66,8 @@ int main(int argc, char** argv)
 
     delete mainModule;
     delete engine;
+
+    delete netcore;
+    delete sender;
     system("pause");
 }

@@ -9,9 +9,9 @@ namespace SPNetwork
     {
         friend SPNetworkCore;
     public:
-        SPNetworkSender(char* addr, unsigned short port, SPNetworkCore* core);
+        SPNetworkSender(const char* addr, unsigned short port, SPNetworkCore* core);
 
-        int SendData(char* data, unsigned int size);
+        int SendData(const char* data, unsigned int size);
 
         ~SPNetworkSender();
     private:
