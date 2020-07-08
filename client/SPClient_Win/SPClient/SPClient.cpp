@@ -10,6 +10,8 @@
 
 #include <SPNetworkCore.hpp>
 #include <SPNetworkSender.hpp>
+#include <Module/Build/Network/SPNetworkMoudle.hpp>
+
 using namespace ImageSys;
 using namespace SPCore;
 using namespace SPCore_Module;
@@ -17,10 +19,10 @@ using namespace SPNetwork;
 
 int main(int argc, char** argv)
 {
-    SPNetworkCore* netcore = new SPNetworkCore();
-    SPNetworkSender* sender = new SPNetworkSender("127.0.0.1", 27015, netcore);
-    const char* tData = "SPNetworkSender";
-    sender->SendData(tData, strlen(tData) + 1);
+    //SPNetworkCore* netcore = new SPNetworkCore();
+    //SPNetworkSender* sender = new SPNetworkSender("127.0.0.1", 27015, netcore);
+    //const char* tData = "SPNetworkSender";
+    //sender->SendData(tData, strlen(tData) + 1);
 
 #pragma region argv
     if (argc > 1)
@@ -44,6 +46,14 @@ int main(int argc, char** argv)
     }
 #pragma endregion
 
+    SPModule* networkRawModule = new SPModule(false);
+    networkRawModule->InitModuleWithFile("SPScript.Module.Network.SPNetworkModule");
+    SPModuleManager::SharedInstance()->RegisterModule(networkRawModule);
+
+    SPNetworkModule* networkModule = new SPNetworkModule();
+    networkModule->AttachTo(networkRawModule);
+
+    //////////////////////////////////////////////
     SPModule* imageRawModule = new SPModule(false);
     imageRawModule->InitModuleWithFile("SPScript.Module.ImageSys.SPImageModule");
     SPModuleManager::SharedInstance()->RegisterModule(imageRawModule);
@@ -51,10 +61,12 @@ int main(int argc, char** argv)
     SPImageModule* imageModule = new SPImageModule();
     imageModule->AttachTo(imageRawModule);
 
+    //////////////////////////////////////////
     SPModule* mainModule = new SPModule(true);
     mainModule->InitModuleWithFile("main");
     SPModuleManager::SharedInstance()->RegisterModule(mainModule);
     
+    /////////////////////////////////////////
     TestModule* testModule = new TestModule();
     testModule->AttachTo(mainModule);
 
@@ -67,7 +79,7 @@ int main(int argc, char** argv)
     delete mainModule;
     delete engine;
 
-    delete netcore;
-    delete sender;
+    //delete netcore;
+    //delete sender;
     system("pause");
 }

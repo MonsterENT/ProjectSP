@@ -159,6 +159,7 @@
     <ClCompile Include="..\..\framework\Network\SPNetworkCore.cpp" />
     <ClCompile Include="..\..\framework\Network\SPNetworkSender.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.cpp" />
+    <ClCompile Include="..\..\framework\SPCore\Module\Build\Network\SPNetworkMoudle.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Test\TestModule.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\SPModule.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\SPModuleManager.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="..\..\framework\Network\SPNetworkCore.hpp" />
     <ClInclude Include="..\..\framework\Network\SPNetworkSender.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.hpp" />
+    <ClInclude Include="..\..\framework\SPCore\Module\Build\Network\SPNetworkMoudle.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Test\TestModule.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\SPModuleManager.hpp" />

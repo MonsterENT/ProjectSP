@@ -1,5 +1,4 @@
-﻿  SPNetworkCore.cpp
-  SPClient.cpp
-  正在生成代码...
+﻿  SPNetworkMoudle.cpp
+F:\Project\ProjectSP\client\framework\SPCore\Module\Build\Network\SPNetworkMoudle.cpp(27,38): warning C4244: “参数”: 从“long”转换到“unsigned short”，可能丢失数据
   LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能
-  SPClient.vcxproj -> C:\Users\Administrator\Desktop\WorkSpace\ProjectSP\client\SPClient_Win\Release\SPClient.exe
+  SPClient.vcxproj -> F:\Project\ProjectSP\client\SPClient_Win\Release\SPClient.exe

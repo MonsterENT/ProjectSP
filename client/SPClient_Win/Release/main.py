@@ -1,5 +1,6 @@
 from SPScript.Module.SPModule import *
 from SPScript.Module.ImageSys.SPImageModule import *
+from SPScript.Module.Network.SPNetworkModule import *
 
 class Object:
     c = 1
@@ -17,6 +18,10 @@ class Object:
 #     return packed_data
 
 def kernel():
+    sender = SPNetworkSender()
+    sender.InitSender("127.0.0.1", 27015)
+    print("Network Sender Result: ", sender.SendData("SPNetworkSender"))
+
     imageObj = SPImageModule()
     print(imageObj)
     imageObj.LoadImage("ground512.png")
