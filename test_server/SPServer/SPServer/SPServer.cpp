@@ -8,9 +8,19 @@
 #include <Ws2tcpip.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
 
 // Link with ws2_32.lib
 #pragma comment(lib, "Ws2_32.lib")
+
+struct SPMsg
+{
+    int code;
+    //std::string data;
+    int code2;
+};
+
+SPMsg buffer;
 
 int main()
 {
@@ -64,7 +74,12 @@ int main()
     if (iResult == SOCKET_ERROR) {
         wprintf(L"recvfrom failed with error %d\n", WSAGetLastError());
     }
-    printf("Recv Data: %s\n", RecvBuf);
+
+    memcpy(&buffer, RecvBuf, sizeof(SPMsg));
+    printf("Recv Data Code: %d\n", buffer.code);
+    //printf("Recv Data String: %s\n", buffer.data.c_str());
+    printf("Recv Data Code2: %d\n", buffer.code2);
+
     //-----------------------------------------------
     // Close the socket when finished receiving datagrams
     wprintf(L"Finished receiving. Closing socket.\n");

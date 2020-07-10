@@ -18,9 +18,9 @@ class Object:
 #     return packed_data
 
 def kernel():
-    sender = SPNetworkSender()
-    sender.InitSender("127.0.0.1", 27015)
-    print("Network Sender Result: ", sender.SendData("SPNetworkSender"))
+    # sender = SPNetworkSender()
+    # sender.InitSender("127.0.0.1", 27015)
+    # print("Network Sender Result: ", sender.SendData("SPNetworkSender"))
 
     imageObj = SPImageModule()
     print(imageObj)

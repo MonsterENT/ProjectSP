@@ -17,12 +17,24 @@ using namespace SPCore;
 using namespace SPCore_Module;
 using namespace SPNetwork;
 
+struct SPMsg
+{
+    int code;
+    //std::string data;
+    int code2;
+};
+
+SPMsg Buffer;
+
 int main(int argc, char** argv)
 {
-    //SPNetworkCore* netcore = new SPNetworkCore();
-    //SPNetworkSender* sender = new SPNetworkSender("127.0.0.1", 27015, netcore);
-    //const char* tData = "SPNetworkSender";
-    //sender->SendData(tData, strlen(tData) + 1);
+    Buffer.code = 10086;
+    //Buffer.data = "SPNetwork";
+    Buffer.code2 = 10010;
+    SPNetworkCore* netcore = new SPNetworkCore();
+    SPNetworkSender* sender = new SPNetworkSender("127.0.0.1", 27015, netcore);
+    const char* tData = (const char*)&Buffer;
+    sender->SendData(tData, sizeof(SPMsg));
 
 #pragma region argv
     if (argc > 1)
