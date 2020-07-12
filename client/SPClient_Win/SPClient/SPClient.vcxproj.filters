@@ -54,6 +54,9 @@
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Network\SPNetworkMoudle.cpp">
       <Filter>SPCoreImport</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\framework\Network\SPDataPacker.cpp">
+      <Filter>NetworkImport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\framework\SPCore\Module\SPModule.hpp">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Network\SPNetworkMoudle.hpp">
       <Filter>SPCoreImport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\framework\Network\SPDataPacker.hpp">
+      <Filter>NetworkImport</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

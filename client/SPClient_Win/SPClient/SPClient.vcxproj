@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\framework\Dependent\ImageSys\ImageSys.cpp" />
+    <ClCompile Include="..\..\framework\Network\SPDataPacker.cpp" />
     <ClCompile Include="..\..\framework\Network\SPNetworkCore.cpp" />
     <ClCompile Include="..\..\framework\Network\SPNetworkSender.cpp" />
     <ClCompile Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.cpp" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\framework\Dependent\ImageSys\ImageSys.hpp" />
     <ClInclude Include="..\..\framework\Dependent\stb\stb_image.h" />
+    <ClInclude Include="..\..\framework\Network\SPDataPacker.hpp" />
     <ClInclude Include="..\..\framework\Network\SPNetworkCore.hpp" />
     <ClInclude Include="..\..\framework\Network\SPNetworkSender.hpp" />
     <ClInclude Include="..\..\framework\SPCore\Module\Build\Image\SPImageModule.hpp" />
